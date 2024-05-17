@@ -1,8 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shoes_app/firebase_options.dart';
-import 'package:shoes_app/login/check_account.dart';
+import 'package:shoes_app/ui/login/check_account.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,8 +12,6 @@ void main() async {
 }
 
  
-final userDB = FirebaseFirestore.instance;
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

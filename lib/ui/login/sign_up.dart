@@ -1,8 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:shoes_app/login/login.dart';
-import 'package:shoes_app/main.dart';
+import 'package:shoes_app/ui/login/login.dart';
+import 'package:shoes_app/saving/user.dart';
 import 'package:shoes_app/widgets/textfield.dart';
+
+final userDB = FirebaseFirestore.instance;
+Users? currentUser;
 
 class SignUp extends StatefulWidget {
   final Function()? onTap;
@@ -41,6 +45,9 @@ class _SignUpState extends State<SignUp> {
             emailController.text.trim(),
             userCredential.user!.uid,
           );
+          final doc = await userDB.doc(userCredential.user!.uid).get();
+           currentUser = Users.fromDocument(doc);
+          if (mounted) setState(() {});
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
@@ -142,6 +149,11 @@ class _SignUpState extends State<SignUp> {
           ),
           const SizedBox(height: 15.0),
           MyTextfield(
+            label: 'Username',
+            controller: usernamecontroller,
+          ),
+          const SizedBox(height: 15.0),
+          MyTextfield(
             controller: emailController,
           ),
           const SizedBox(height: 15.0),
@@ -154,11 +166,11 @@ class _SignUpState extends State<SignUp> {
           MyTextfield(
             obscure: true,
             label: 'Coniform Password',
-            controller: passwordController,
+            controller: coniformpasswordController,
           ),
           MyElevatedButtonWithLogin(
             text: 'Register',
-            onTap: () {},
+            onTap: signUp,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

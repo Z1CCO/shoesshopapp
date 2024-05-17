@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:shoes_app/login/login_signup.dart';
-import 'package:shoes_app/profile/profile.dart';
+import 'package:shoes_app/ui/login/login_signup.dart';
+import 'package:shoes_app/ui/profile/profile.dart';
 
 class CheckAccount extends StatefulWidget {
   const CheckAccount({super.key});

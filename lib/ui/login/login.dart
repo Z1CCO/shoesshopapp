@@ -70,7 +70,7 @@ class _LoginState extends State<Login> {
             controller: passwordController,
           ),
           MyElevatedButtonWithLogin(
-            onTap: () {},
+            onTap: () => login(context),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

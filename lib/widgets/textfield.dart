@@ -24,7 +24,7 @@ class _MyTextfieldState extends State<MyTextfield> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: TextField(
-        obscureText: widget.iconobs == false ? true : false,
+        obscureText: widget.iconobs == false ? false : true,
         controller: widget.controller,
         decoration: InputDecoration(
           suffix: widget.obscure == true
@@ -40,8 +40,8 @@ class _MyTextfieldState extends State<MyTextfield> {
                     child: SizedBox(
                       height: 18,
                       child: widget.iconobs == false
-                          ? Image.asset('assets/images/eyeclose.png')
-                          : Image.asset('assets/images/openeye.png'),
+                          ? Image.asset('assets/images/openeye.png')
+                          : Image.asset('assets/images/eyeclose.png'),
                     ),
                   ),
                 )

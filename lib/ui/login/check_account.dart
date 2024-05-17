@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shoes_app/ui/homescreen.dart';
 import 'package:shoes_app/ui/login/login_signup.dart';
-import 'package:shoes_app/ui/profile/profile.dart';
 
 class CheckAccount extends StatefulWidget {
   const CheckAccount({super.key});
@@ -18,7 +18,7 @@ class _CheckAccountState extends State<CheckAccount> {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return const Profile();
+            return  HomeScreen();
           } else {
             return const LoginAndSignUp();
           }

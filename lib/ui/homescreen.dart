@@ -46,34 +46,28 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    GestureDetector(
-                      onTap: () {},
-                      child: Icon(
+                    IconButton(
+                      color: Colors.white,
+                      onPressed: () {},
+                      icon: Icon(
                         Icons.home_outlined,
-                        color: Colors.white,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 135.0),
-                      child: Icon(
-                        Icons.favorite_outline,
-                        color: Colors.white,
-                      ),
+                    IconButton(
+                      color: Colors.white,
+                      onPressed: () {},
+                      icon: Icon(Icons.favorite_outline),
                     ),
-                    Spacer(),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(builder: (context) => Profile()),
-                          (Route<dynamic> route) => false,
-                        );
+                    IconButton(
+                    focusColor: Colors.grey,
+                      color: Colors.white,
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Profile()));
                       },
-                      child: Icon(
-                        Icons.person_outline_rounded,
-                        color: Colors.white,
-                      ),
+                      icon: Icon(Icons.person_outline),
                     ),
                   ],
                 ),

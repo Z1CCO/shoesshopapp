@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:shoes_app/ui/favourite/favourite.dart';
+import 'package:shoes_app/ui/home/homepage.dart';
 import 'package:shoes_app/ui/profile/profile.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -10,9 +12,19 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
+  // final List bottomnavbar = [
+  //   Icon(Icons.home),
+  //   Image(
+  //     image: AssetImage('assets/images/favourite.png'),
+  //   ),
+  //   Image(
+  //     image: AssetImage('assets/images/profile.png'),
+  //   ),
+  // ];
+
   final List _widgetOptions = [
-    Text('Products'),
-    Text('Favourite'),
+    HomePage(),
+    FavouriteScreen(),
     Profile(),
   ];
 
@@ -26,10 +38,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      appBar: AppBar(
-        title: Text('Products'),
-        actions: [Icon(Icons.search)],
-      ),
       body: Stack(
         children: [
           _widgetOptions[_selectedIndex],
@@ -46,31 +54,18 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    IconButton(
-                      color: Colors.white,
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.home_outlined,
-                      ),
-                    ),
-                    IconButton(
-                      color: Colors.white,
-                      onPressed: () {},
-                      icon: Icon(Icons.favorite_outline),
-                    ),
-                    IconButton(
-                    focusColor: Colors.grey,
-                      color: Colors.white,
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Profile()));
-                      },
-                      icon: Icon(Icons.person_outline),
-                    ),
-                  ],
-                ),
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: List.generate(_widgetOptions.length, (index) {
+                      return IconButton(
+                        color: Colors.white,
+                        onPressed: () {
+                          setState(() {
+                            _selectedIndex = index;
+                          });
+                        },
+                        icon: Icon(Icons.home),
+                      );
+                    })),
               ),
             ),
           ),

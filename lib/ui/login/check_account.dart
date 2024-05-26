@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:shoes_app/ui/homescreen.dart';
+import 'package:shoes_app/homescreen.dart';
 import 'package:shoes_app/ui/login/login_signup.dart';
 
 class CheckAccount extends StatefulWidget {

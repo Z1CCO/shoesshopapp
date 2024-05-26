@@ -98,16 +98,18 @@ class _LoginState extends State<Login> {
 class MyElevatedButtonWithLogin extends StatelessWidget {
   VoidCallback onTap;
   String? text;
+  EdgeInsets? padding;
   MyElevatedButtonWithLogin({
     required this.onTap,
     this.text,
+    this.padding,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 22),
+      padding: padding ?? EdgeInsets.symmetric(horizontal: 16.0, vertical: 22),
       child: SizedBox(
         width: double.infinity,
         height: 50,

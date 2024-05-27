@@ -136,126 +136,67 @@ class _IteminformationScreenState extends State<IteminformationScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(
-                Icons.no_drinks_rounded,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(
+                  Icons.account_circle,
+                ),
               ),
-              Text(
-                'Nike',
-                style: TextStyle(fontSize: 25),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Nike',
+                  style: TextStyle(fontSize: 25),
+                ),
               ),
               SizedBox(
-                width: 20,
+                width: 50,
                 height: 20,
               )
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue,
-                ),
-                width: 40,
-                height: 40,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue,
-                ),
-                width: 40,
-                height: 40,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue,
-                ),
-                width: 40,
-                height: 40,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue,
-                ),
-                width: 40,
-                height: 40,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue,
-                ),
-                width: 40,
-                height: 40,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue,
-                ),
-                width: 40,
-                height: 40,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue,
-                ),
-                width: 40,
-                height: 40,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue,
-                ),
-                width: 40,
-                height: 40,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue,
-                ),
-                width: 40,
-                height: 40,
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: List.generate(6, (context) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Colors.blue,
+                    ),
+                    width: 40,
+                    height: 40,
+                  );
+                })),
           ),
-          Row(
-            children: [
-              Text(
-                '4',
-                style: TextStyle(fontSize: 30),
-              ),
-              Icon(
-                Icons.star_rounded,
-                size: 40,
-              ),
-              Icon(
-                Icons.star_rounded,
-                size: 40,
-              ),
-              Icon(
-                Icons.star_rounded,
-                size: 40,
-              ),
-              Icon(
-                Icons.star_rounded,
-                size: 40,
-              ),
-              Icon(
-                Icons.star_rounded,
-                size: 40,
-              ),
-              Text('180\$')
-            ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Text(
+                  '4',
+                  style: TextStyle(fontSize: 30),
+                ),
+                Row(
+                  children: List.generate(
+                    5,
+                    (context) {
+                      return Icon(
+                        Icons.star_rounded,
+                        size: 40,
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
+      ),
+      bottomNavigationBar: MyElevatedButtonWithLogin(
+        onTap: () {},
+        text: 'Buy',
       ),
     );
   }

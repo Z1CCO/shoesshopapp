@@ -12,16 +12,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
-  // final List bottomnavbar = [
-  //   Icon(Icons.home),
-  //   Image(
-  //     image: AssetImage('assets/images/favourite.png'),
-  //   ),
-  //   Image(
-  //     image: AssetImage('assets/images/profile.png'),
-  //   ),
-  // ];
-
   final List _widgetOptions = [
     HomePage(),
     FavouriteScreen(),
@@ -54,18 +44,34 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20),
                 child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: List.generate(_widgetOptions.length, (index) {
-                      return IconButton(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: 32,
+                      height: 32,
+                      child: Image(
                         color: Colors.white,
-                        onPressed: () {
-                          setState(() {
-                            _selectedIndex = index;
-                          });
-                        },
-                        icon: Icon(Icons.home),
-                      );
-                    })),
+                        image: AssetImage('assets/images/home.png'),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 32,
+                      width: 32,
+                      child: Image(
+                        color: Colors.white,
+                        image: AssetImage('assets/images/favourite.png'),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 22,
+                      height: 22,
+                      child: Image(
+                        color: Colors.white,
+                        image: AssetImage('assets/images/profile.png'),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

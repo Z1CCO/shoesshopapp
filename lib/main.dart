@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shoes_app/firebase_options.dart';
+import 'package:shoes_app/ui/favourite/favourite.dart';
 import 'package:shoes_app/ui/login/check_account.dart';
 
 void main() async {

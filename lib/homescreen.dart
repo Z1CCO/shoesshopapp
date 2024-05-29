@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:shoes_app/ui/favourite/favourite.dart';
@@ -78,3 +79,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+

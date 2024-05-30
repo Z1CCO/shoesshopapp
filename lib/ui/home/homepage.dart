@@ -9,6 +9,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<String> tabtitle = ['ALL', 'PUMA', 'NIKE', 'ADIDAS', 'LACOSTE'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +27,7 @@ class _HomePageState extends State<HomePage> {
                   scrollDirection: Axis.horizontal,
                   children: List.generate(tabtitle.length, (index) {
                     return Container(
+                      
                       margin: EdgeInsets.symmetric(horizontal: 4, vertical: 12),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
@@ -57,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.only(
                       top: 6.0, left: 10, right: 10, bottom: 5),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
@@ -80,6 +82,20 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10.0),
+                        child: Container(
+                          width: 185,
+                          height: 108,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/images/krasofkanike.png')),
+                            color: Colors.grey[350],
+                          ),
+                        ),
+                      ),
+                      Spacer(),
                       Text(
                         '\$ 150',
                         style: TextStyle(
@@ -87,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       Text(
-                        'nike zoom air max',
+                        'puma zoom air max',
                         style: TextStyle(
                           color: Colors.grey[600],
                           fontSize: 15,
@@ -104,16 +120,11 @@ class _HomePageState extends State<HomePage> {
                                     AssetImage('assets/images/favourite.png')),
                           )
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
                 decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        'assets/images/krasofkanike.png',
-                      ),
-                    ),
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(18)),
               );

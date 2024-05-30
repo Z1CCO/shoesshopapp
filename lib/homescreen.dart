@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:shoes_app/ui/favourite/favourite.dart';
 import 'package:shoes_app/ui/home/homepage.dart';
 import 'package:shoes_app/ui/profile/profile.dart';
@@ -20,9 +18,9 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   final List _widgetOptions = [
-    HomePage(),
-    FavouriteScreen(),
-    Profile(),
+    const HomePage(),
+    const FavouriteScreen(),
+    const Profile(),
   ];
 
   void _onItemTapped(int index) {
@@ -38,9 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           _widgetOptions[_selectedIndex],
           Align(
-            alignment: Alignment(0.0, 0.97),
+            alignment: const Alignment(0.0, 0.97),
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 14),
+              margin: const EdgeInsets.symmetric(horizontal: 14),
               width: double.infinity,
               height: 60,
               decoration: BoxDecoration(
@@ -50,8 +48,10 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20),
                 child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: List.generate(bottomItem.length, (index) {
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: List.generate(
+                    bottomItem.length,
+                    (index) {
                       return GestureDetector(
                         onTap: () {
                           setState(() {
@@ -69,7 +69,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       );
-                    })),
+                    },
+                  ),
+                ),
               ),
             ),
           ),
@@ -79,4 +81,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-

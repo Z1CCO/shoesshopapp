@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_app/ui/profile/active.dart';
+import 'package:shoes_app/ui/profile/done.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -76,24 +78,10 @@ class Profile extends StatelessWidget {
               ),
             ),
           ),
-          body: const TabBarView(
+          body:  TabBarView(
             children: [
-              SizedBox(
-                width: double.infinity,
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [],
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: double.infinity,
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [],
-                  ),
-                ),
-              ),
+              ActiveScreen(),
+              AllDoneScreen(),
             ],
           ),
         ),
